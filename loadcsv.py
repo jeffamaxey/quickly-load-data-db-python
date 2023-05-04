@@ -14,8 +14,7 @@ def read_csv(csv_file):
         reader = csv.reader(in_file, delimiter="|")
         next(reader)  # Header row
 
-        for row in reader:
-            yield row
+        yield from reader
 
 
 def process_row(row, batch, table_name, conn_params):
